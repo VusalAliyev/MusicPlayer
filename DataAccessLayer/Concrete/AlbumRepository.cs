@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class AlbumRepository:RepositoryBase<Album>
+    public class AlbumRepository : RepositoryBase<Album>
     {
-        public AlbumRepository(AppDbContext context):base(context){}
+        public AlbumRepository(AppDbContext context) : base(context) { }
     }
 }

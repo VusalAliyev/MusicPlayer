@@ -10,10 +10,10 @@ namespace BusinessLayer.Abstract
     public interface IAlbumService
     {
         Task Add(AlbumCreateDTO album);
+        Task<IEnumerable<AlbumGetDTO>> GetAll();
         Task Update(AlbumUpdateDTO album);
         Task Delete(AlbumDeleteDTO album);
         Task Find(int id);
-        Task GetAll(AlbumGetDTO album);
 
     }
 }

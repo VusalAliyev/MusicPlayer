@@ -14,8 +14,10 @@ namespace DataAccessLayer.Concrete.Base
     {
         private readonly AppDbContext _context;
 
-        public RepositoryBase(AppDbContext context) => _context = context;
-
+        public RepositoryBase(AppDbContext context)
+        {
+            _context = context;
+        }
 
         public async Task Add(TEntity entity)
         {

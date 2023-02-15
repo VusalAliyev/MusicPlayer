@@ -1,6 +1,8 @@
-﻿using BusinessLayer.Abstract;
+﻿using AutoMapper;
+using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.DTOs.Album;
+using EntityLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,30 +13,43 @@ namespace BusinessLayer.Concrete
 {
     public class AlbumManager : IAlbumService
     {
-        ISongRepository
-        public Task Add(AlbumCreateDTO album)
+        IAlbumRepository _albumRepository;
+        private readonly IMapper _mapper;
+
+        public AlbumManager(IAlbumRepository albumRepository, IMapper mapper)
         {
-            throw new NotImplementedException();
+            _albumRepository = albumRepository;
+            _mapper = mapper;
         }
 
-        public Task Delete(AlbumDeleteDTO album)
+        public async Task Add(AlbumCreateDTO albumCreateDTO)
         {
-            throw new NotImplementedException();
+            var result = _mapper.Map<Album>(albumCreateDTO);
+            await _albumRepository.Add(result);
         }
 
-        public Task Find(int id)
+        public async Task Delete(AlbumDeleteDTO albumDeleteDTO)
         {
-            throw new NotImplementedException();
+            var result = _mapper.Map<Album>(albumDeleteDTO);
+            await _albumRepository.Remove(result);
         }
 
-        public Task GetAll(AlbumGetDTO album)
+        public async Task Find(int id)
         {
-            throw new NotImplementedException();
+            await _albumRepository.Find(id);
         }
 
-        public Task Update(AlbumUpdateDTO album)
+        public async Task<IEnumerable<AlbumGetDTO>> GetAll()
         {
-            throw new NotImplementedException();
+            IEnumerable<Album> albums = await _albumRepository.GetAll();
+            var result = _mapper.Map<IEnumerable<AlbumGetDTO>>(albums);
+            return result;
+        }
+
+        public async Task Update(AlbumUpdateDTO  albumUpdateDTO)
+        {
+            var result = _mapper.Map<Album>(albumUpdateDTO);
+            await _albumRepository.Remove(result);  
         }
     }
 }
