@@ -1,6 +1,4 @@
 ﻿using BusinessLayer.Abstract;
-using DataAccessLayer.Abstract;
-using EntityLayer.DTOs.Album;
 using Microsoft.AspNetCore.Mvc;
 using MusicPlayer.Models;
 using System.Diagnostics;
@@ -10,24 +8,17 @@ namespace MusicPlayer.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IAlbumService _service;
-
-        public HomeController(ILogger<HomeController> logger, IAlbumService service)
+        private readonly IPlaylistService _playlistService;
+        public HomeController(ILogger<HomeController> logger, IPlaylistService playlistService)
         {
             _logger = logger;
-            _service = service;
+            _playlistService = playlistService;
         }
 
         public async Task<IActionResult> Index()
         {
-            var albums =await _service.GetAll();
-            return View(albums);
-        }
-        [HttpPost]
-        public async Task<IActionResult> Post(AlbumCreateDTO album)
-        {
-            await _service.Add(album);
-            return View(RedirectToAction(nameof(Index)));
+            var playlists = await _playlistService.GetAll();
+            return View(playlists);
         }
         public IActionResult Privacy()
         {

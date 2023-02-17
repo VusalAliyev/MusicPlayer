@@ -1,22 +1,21 @@
-﻿using DataAccessLayer.DataContext;
+﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
+using DataAccessLayer.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DataAccessLayer
+namespace DataAccessLayer;
+
+public static class ServiceConfiguration
 {
-    public static class ServiceConfiguration
+    public static IServiceCollection AddDataAccess(this IServiceCollection services, IConfiguration configuration)
     {
-        public static IServiceCollection AddDataAccess(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DbConnection")));
+        services.AddDbContext<AppDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DbConnection")));
+        services.AddScoped<IAlbumRepository, AlbumRepository>();
+        services.AddScoped<IPlaylistRepository, PlaylistRepository>();
 
-            return services;
-        }
+
+        return services;
     }
 }

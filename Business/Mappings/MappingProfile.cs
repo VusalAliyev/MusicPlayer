@@ -1,15 +1,11 @@
 ﻿using AutoMapper;
 using EntityLayer.DTOs.Album;
+using EntityLayer.DTOs.Playlist;
 using EntityLayer.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Mappings
 {
-    public class MappingProfile:Profile
+    public class MappingProfile : Profile
     {
         public MappingProfile()
         {
@@ -17,6 +13,8 @@ namespace BusinessLayer.Mappings
             CreateMap<Album, AlbumUpdateDTO>().ReverseMap();
             CreateMap<Album, AlbumGetDTO>().ReverseMap();
             CreateMap<Album, AlbumDeleteDTO>().ReverseMap();
+
+            CreateMap<Playlist, PlaylistGetDTO>().ReverseMap();
         }
     }
 }

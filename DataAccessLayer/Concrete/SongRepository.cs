@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Concrete.Base;
+﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.Base;
 using DataAccessLayer.DataContext;
 using EntityLayer.Entities;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class SongRepository:RepositoryBase<Song>
+    public class SongRepository:RepositoryBase<Song>,ISongRepository
     {
         public SongRepository(AppDbContext context) : base(context) { }
     }

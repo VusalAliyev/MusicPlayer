@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;0,900;1,100&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Adify</title>
+</head>
+
+<body>
+
+    <main>
+        <div class="lateral">
+            <div class="logo"><img
+                    src="https://logodownload.org/wp-content/uploads/2016/09/spotify-logo-branca-white.png" alt="LOGO">
+            </div>
+            <div class="mainbuttons">
+                <button class="firstbutton"><i class="fa fa-home" aria-hidden="true"></i>Inicio</button>
+                <button class="otherbuttons"><i class="fa fa-search" aria-hidden="true"></i>Buscar</button>
+                <button class="otherbuttons"><i class="fa fa-bookmark" aria-hidden="true"></i>Tu Biblioteca</button>
+            </div>
+            <div class="secondarybuttons">
+                <button class="otherbuttons"><i class="fa fa-plus" aria-hidden="true"></i>Crear Playlist</button>
+                <button class="otherbuttons"><i class="fa fa-heart" aria-hidden="true"></i>Tus me gusta</button>
+            </div>
+        </div>
+        <div class="container" id="firstcontainer">
+            <div class="content">
+                <nav>
+                    <div class="backandforward">
+                        <button id="back_and_forwad_back"><i class="fa fa-angle-left" aria-hidden="true" ></i></button>
+                        <button id="back_and_forwad_forward"><i class="fa fa-angle-right" aria-hidden="true" ></i></button>
+                    </div>
+                    <div class="profile">
+                        <img src="./resources/images/vista-wei-profile.webp" alt="">
+                        <span id="username">
+                            Nombre Apellido
+                        </span>
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </div>
+                </nav>
+
+                <div class="first">
+                    <h3>Buenas noches</h3>
+                    <div class="container-cards-playlists" id="container-cards-playlists">
+                    </div>
+                </div>
+
+                <div class="second">
+                    <h3>Escucha esto!</h3>
+                    <div class="container-cards-podcasts" id="container-cards-podcasts">
+                    </div>
+                </div>
+
+                <div class="third">
+                    <div class="hidden"><span>under construction</span></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container" id="secondcontainer">
+            <div class="content">
+                <nav>
+                    <div class="backandforward">
+                        <button id="back_and_forwad_two_back"><i class="fa fa-angle-left" aria-hidden="true" ></i></button>
+                        <button id="back_and_forwad_two_forward"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="profile">
+                        <img src="./resources/images/vista-wei-profile.webp" alt="">
+                        <span id="username">
+                            Nombre Apellido
+                        </span>
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </div>
+                </nav>
+                <div class="header">
+                    <div class="header_image">
+                        <img src="https://3minutosdearte.com/wp-content/uploads/2018/08/Kirchner-Marcella-1910-e1554142943637.jpg"
+                            alt="">
+                    </div>
+                    <div class="header_info">
+                        <span>PODCAST</span>
+                        <h1>OverThink</h1>
+                        <h3>Me and my panas</h3>
+                    </div>
+                </div>
+                <div class="end_container">
+                    <div class="mid">
+                        <div class="mid_button">
+                            <button>SEGUIR</button>
+                        </div>
+                        <div class="mid_suspense">
+                            <h4>...</h4>
+                        </div>
+                    </div>
+                    <div class="main_container">
+                        <div class="main_list">
+                            <span>Todos los episodios</span>
+                            <div class="main_list_card">
+                                <div class="main_list_card_img">
+                                    <img src="https://3minutosdearte.com/wp-content/uploads/2018/08/Kirchner-Marcella-1910-e1554142943637.jpg" alt="">
+                                </div>
+                                <div class="main_list_card_info">
+                                    <h3>Primer capítulo</h3>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa fugit quam
+                                        doloribus
+                                        incidunt minima illo qui sit laboriosam distinctio! Praesentium ut inventore
+                                        voluptates dolores dicta voluptas aut distinctio pariatur facere.</p>
+                                    <div class="main_list_card_info_bottom">
+                                        <i class="fa fa-play-circle" aria-hidden="true" id="main_list_card_info_bottom_button_play"></i>
+                                        <i class="fa fa-pause-circle" aria-hidden="true" id="main_list_card_info_bottom_button_pause"></i>
+                                        <span>jun. de 2021 - 15 min 31 s</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main_info">
+                            <div class="main_info_text">
+                                <h3>Acerca de</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus sapiente error ea
+                                    explicabo, nobis animi quae saepe? Numquam voluptate dolorem et molestiae quasi.
+                                    Blanditiis eius corrupti accusantium nesciunt eos fuga.</p>
+                            </div>
+                            <div class="main_info_card">
+                                <div class="main_info_card_first">
+                                    <img src="https://3minutosdearte.com/wp-content/uploads/2018/08/Kirchner-Marcella-1910-e1554142943637.jpg" alt="">
+                                    <div class="card_content">
+                                        <h3>Primer capítulo</h3>
+                                        <span>15 min 31 s</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+
+    <div class="footer">
+
+        <div class="songinfo">
+            <img src="./resources/images/first.png" alt="" id="songinfo_img">
+            <div class="songinfo_info">
+                <h3 id="songinfo_h3"></h3>
+                <span id="songinfo_span"></span>
+            </div>
+
+            <div class="songinfo_buttons">
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <i class="fa fa-desktop" aria-hidden="true"></i>
+            </div>
+        </div>
+
+        <div class="songtrack">
+            <div class="song_track_controls">
+                <i class="fa fa-random" aria-hidden="true"></i>
+                <i class="fa fa-step-backward" aria-hidden="true"></i>
+                <i class="fa fa-play-circle" aria-hidden="true" id="song_track_play_button"></i>
+                <i class="fa fa-pause-circle" aria-hidden="true" id="song_track_stop_button"></i>
+                <i class="fa fa-step-forward" aria-hidden="true"></i>
+                <i class="fa fa-cog" aria-hidden="true"></i>
+            </div>
+            <div class="songtrack_song">
+                <input type="range" name="songtrack" id="songtrack_range">
+            </div>
+            <audio class="player_audio" controls id="audio">
+                <source src="" type="audio/mpeg" autoplay="false" id="song_source">
+            </audio>
+        </div>
+
+        <div class="extracontrols">
+            <i class="fa fa-microphone" aria-hidden="true"></i>
+            <i class="fa fa-list" aria-hidden="true"></i>
+            <i class="fa fa-television" aria-hidden="true"></i>
+            <i class="fa fa-volume-down" aria-hidden="true"></i>
+            <input type="range" name="volume" class="volume" id="volume">
+            <i class="fa fa-expand" aria-hidden="true"></i>
+        </div>
+
+    </div>
+    <script src="./script/app.js"></script>
+</body>
+
+</html>

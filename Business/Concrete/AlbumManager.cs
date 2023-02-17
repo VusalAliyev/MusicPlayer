@@ -3,17 +3,12 @@ using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.DTOs.Album;
 using EntityLayer.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
     public class AlbumManager : IAlbumService
     {
-        IAlbumRepository _albumRepository;
+        private readonly IAlbumRepository _albumRepository;
         private readonly IMapper _mapper;
 
         public AlbumManager(IAlbumRepository albumRepository, IMapper mapper)
@@ -46,10 +41,10 @@ namespace BusinessLayer.Concrete
             return result;
         }
 
-        public async Task Update(AlbumUpdateDTO  albumUpdateDTO)
+        public async Task Update(AlbumUpdateDTO albumUpdateDTO)
         {
             var result = _mapper.Map<Album>(albumUpdateDTO);
-            await _albumRepository.Remove(result);  
+            await _albumRepository.Remove(result);
         }
     }
 }
